@@ -34,3 +34,9 @@ class UserRepository:
         self._connection.execute(
             'DELETE FROM users WHERE id = %s', [user_id])
         return None
+
+    # Update a user
+    def update(self, user):
+        self._connection.execute(
+            'UPDATE users SET email = %s, username = %s WHERE id = %s', [user.email, user.username, user.id])
+        return None
