@@ -128,11 +128,11 @@ user.username # =>  'David12'
 
 repo = UserRepository()
 
-new_user = User(3, "sid@email.com", "sidTheSloth")
+new_user = User(None, "sid@email.com", "sidTheSloth")
 
-repo.create(new_user)
+user_id = repo.create(new_user)
 
-user = repo.find(3)
+user = repo.find(user_id)
 
 user.id # =>  3
 user.email # =>  'sid@email.com'
